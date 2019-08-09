@@ -1,5 +1,12 @@
 .imagemLogo{
-  width: 100px;
-  margin-left: 35%;
-  margin-top: 30px
+  height: 200px;
+}
+
+.imagemLogo img{
+  height: 148px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  top: 24px
 }
