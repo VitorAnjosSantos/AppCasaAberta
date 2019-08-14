@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { NavController } from '@ionic/angular';
 
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,11 +10,21 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage {
 
-  constructor(private navCtlr: NavController) { }
+  formularioLogin;
 
-  login(){
+  constructor(private navCtlr: NavController, private formBuilder: FormBuilder) { 
+    this.formularioLogin = this.formBuilder.group({
+      email: "",
+      password: ""
+    })
+   
+  } 
+  login(dadosLogin){
     //alert("click");
-    this.navCtlr.navigateForward("tabs");
+    //this.navCtlr.navigateForward("tabs");
+    
+
+
   }
 
 }
