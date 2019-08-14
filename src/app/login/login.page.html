@@ -5,16 +5,16 @@
   <img src="./assets/img/img.jpg">
 </div>
 
-<form [formGroup]="formularioLogin" >
+<form [forGroup]="formularioLogin" (ngSubmit)="login(formularioLogin.value)">
   <ion-item>
     <ion-label position="stacked">Floating Label</ion-label>
-  <ion-input type="email" inputmode="email" formControlName="email" required="true"></ion-input>
+  <ion-input type="email" inputmode= "email" formControlName="email" required="true"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="stacked">Floating Label</ion-label>
-    <ion-input type="password" inputmode="password" formControlName="password" required="true"></ion-input>
+    <ion-input type="password" inputmode= "password" formControlName="password" required="true"></ion-input>
   </ion-item>
 </form>
-<ion-button color="success" (click)="login(formularioLogin.value)">Entrar</ion-button>
+<ion-button color="success" type="submit">Entrar</ion-button>
 </ion-content>
