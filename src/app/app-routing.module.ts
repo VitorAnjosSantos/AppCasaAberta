@@ -7,7 +7,10 @@ const routes: Routes = [
   //   loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   // },
   { path: '', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'cadastrar-usuario', loadChildren: './cadastrar-usuario/cadastrar-usuario.module#CadastrarUsuarioPageModule' },
+  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: '**', loadChildren: './erro/erro.module#ErroPageModule' }
+
 
 
 ];
