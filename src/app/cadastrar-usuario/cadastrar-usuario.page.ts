@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  } from '@angular/core';
 import { NavController } from '@ionic/angular';
 
 import {FormBuilder} from '@angular/forms';
@@ -10,20 +10,38 @@ import{UsuarioService} from '../services/usuario/usuario.service';
   templateUrl: './cadastrar-usuario.page.html',
   styleUrls: ['./cadastrar-usuario.page.scss'],
 })
-export class CadastrarUsuarioPage implements OnInit {
+export class CadastrarUsuarioPage{
 
-  formularioCadastro;
+  formularioCadastrar: any;
 
   constructor(private navCtlr: NavController, private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
-    this.formularioCadastro = this.formBuilder.group({
-      text: "",
+    this.formularioCadastrar = this.formBuilder.group({
       email: "",
-      password: ""
+      senha: "",
+      nome: ""
     })
-  }
-  
 
-  ngOnInit() {
+  }
+  cadastrar(dadosCadastro: any){
+    const formData = new FormData();
+    formData.append('email', dadosCadastro.email);
+    formData.append('senha', dadosCadastro.senha);
+    formData.append('nome', dadosCadastro.nome);
+
+
+
+    this.usuarioService.cadastrar(formData).subscribe((dados: any) => {
+      console.log(dados);
+
+      if (dados.sucesso){
+        this.navCtlr.navigateForward("/");
+      }
+      else{
+        alert("Erro ao Cadastar o Usuário");
+      }
+
+    });
+
   }
 
 }

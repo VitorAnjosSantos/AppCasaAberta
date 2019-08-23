@@ -5,11 +5,16 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class UsuarioService {
+  url: string = "http://localhost:8081/casaAberta/objetos";
 
   constructor(private http: HttpClient) { }
 
-  login(data: any){
-    return this.http.post('http://localhost:8081/casaAberta/objetos/obj_usuario.php', data);
+  login(dados: any){
+    return this.http.post(this.url + '/obj_usuario.php', dados);
+  }
+
+  cadastrar(dados: any){
+    return this.http.post(this.url + '/obj_usuario_insert.php', dados);
   }
 
 }
