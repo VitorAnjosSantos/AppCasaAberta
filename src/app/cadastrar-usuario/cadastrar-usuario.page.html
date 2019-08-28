@@ -1,30 +1,32 @@
 <ion-header>
-  <ion-buttons slot="start">
-        <ion-back-button defaultHref="/"></ion-back-button>
-  </ion-buttons>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>Cadastro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="formularioCadastrar" >
+<ion-content class="ion-padding">
 
-  <ion-item>
-        <ion-label position="stacked">Nome</ion-label>
-        <ion-input type="text" inputmode= "text" formControlName= "nome"></ion-input>
-  </ion-item>
+  <form [formGroup]="formularioCadastrar">
 
-  <ion-item>
-        <ion-label position="stacked">Email</ion-label>
-        <ion-input type="email" inputmode= "email" formControlName= "email"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Nome</ion-label>
+      <ion-input type="text" inputmode="text" formControlName="nome" required="true"></ion-input>
+    </ion-item>  
 
-  <ion-item>
-        <ion-label position="stacked">Senha</ion-label>
-        <ion-input type="password" inputmode= "password" name="senha" formControlName= "senha"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label position="stacked">E-mail</ion-label>
+      <ion-input type="email" inputmode="email" formControlName="email" required="true"></ion-input>
+    </ion-item>  
 
-    <ion-button type="button" expand="block" (click)= "cadastrar(formularioCadastrar.value)" fill="clear">Cadastrar</ion-button>
-    </form>
+    <ion-item>
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input type="password" inputmode="password" formControlName="senha" required="true"></ion-input>
+    </ion-item> 
+
+    <ion-button type="submit" expand="block" (click)="cadastrar(formularioCadastrar.value)" [disabled]="formularioCadastrar.invalid" color="success">Cadastrar</ion-button>
+  </form> 
+
 </ion-content>

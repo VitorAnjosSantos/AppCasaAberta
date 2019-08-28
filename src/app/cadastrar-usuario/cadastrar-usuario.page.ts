@@ -1,47 +1,44 @@
-import { Component,  } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { NavController } from '@ionic/angular';
 
-import {FormBuilder} from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 
-import{UsuarioService} from '../services/usuario/usuario.service';
+import { UsuarioService } from '../services/usuario/usuario.service';
 
 @Component({
   selector: 'app-cadastrar-usuario',
   templateUrl: './cadastrar-usuario.page.html',
   styleUrls: ['./cadastrar-usuario.page.scss'],
 })
-export class CadastrarUsuarioPage{
+export class CadastrarUsuarioPage {
 
   formularioCadastrar: any;
 
-  constructor(private navCtlr: NavController, private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
+  constructor(private navCtrl: NavController, private formBuilder: FormBuilder, private usuarioService: UsuarioService) { 
     this.formularioCadastrar = this.formBuilder.group({
       email: "",
       senha: "",
       nome: ""
-    })
-
+    });
   }
-  cadastrar(dadosCadastro: any){
+
+  cadastrar(dadosCadastro: any) {
     const formData = new FormData();
-    formData.append('email', dadosCadastro.email);
-    formData.append('senha', dadosCadastro.senha);
-    formData.append('nome', dadosCadastro.nome);
-
-
+    formData.append("email", dadosCadastro.email);
+    formData.append("senha", dadosCadastro.senha);
+    formData.append("nome", dadosCadastro.nome);
 
     this.usuarioService.cadastrar(formData).subscribe((dados: any) => {
       console.log(dados);
 
-      if (dados.sucesso){
-        this.navCtlr.navigateForward("/");
+      if (dados.sucesso) {
+        //this.navCtrl.navigateForward("/");
+        this.navCtrl.navigateRoot("/");
+      } else {
+        alert("Erro ao cadastrar o usuário!");
       }
-      else{
-        alert("Erro ao Cadastar o Usuário");
-      }
-
     });
-
   }
 
 }

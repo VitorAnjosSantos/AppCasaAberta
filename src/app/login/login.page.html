@@ -1,23 +1,25 @@
+<ion-content class="ion-padding">
 
-<ion-content>
+  <div class="loginHeaderImg">
+    <img src="./assets/img/senac.png" />
+  </div>
+  
+  <form [formGroup]="formularioLogin">
+    <ion-item>
+      <ion-label position="stacked">E-mail</ion-label>
+      <ion-input type="email" inputmode="email" formControlName="email" required="true"></ion-input>
+    </ion-item>  
 
-<div class="imagemLogo">
-  <img src="./assets/img/img.jpg">
-</div>
+    <ion-item>
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input type="password" inputmode="password" formControlName="password" required="true"></ion-input>
+    </ion-item> 
 
-<form [formGroup]="formularioLogin" >
-  <ion-item>
-    <ion-label position="stacked">Email</ion-label>
-  <ion-input type="email" inputmode= "email" formControlName="email" required="true"></ion-input>
-  </ion-item>
+    <ion-button type="submit" expand="block" (click)="login(formularioLogin.value)" [disabled]="formularioLogin.invalid" color="success">Entrar</ion-button>
+  </form> 
 
-  <ion-item>
-    <ion-label position="stacked">Senha</ion-label>
-    <ion-input type="password" inputmode= "password" formControlName="password" required="true"></ion-input>
-  </ion-item>
-  <ion-button color="success" type="submit" expand="block" (click)="login(formularioLogin.value)">Entrar</ion-button>
-</form>
+  <br>
 
-<ion-button type="button" expand="block" (click)= "cadastrar()" fill="clear">Cadastrar</ion-button>
+  <ion-button type="button" expand="block" (click)="cadastrar()" fill="clear">Cadastre-se</ion-button>
 
 </ion-content>
