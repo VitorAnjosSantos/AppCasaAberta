@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>eventos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let evento of dados">
+    <h1>{{evento.nome}}</h1>
+    <h6>{{evento.descricao}}</h6>
+  </div>
+</ion-content>
