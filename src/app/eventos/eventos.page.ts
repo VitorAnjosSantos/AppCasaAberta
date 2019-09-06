@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { EventoService } from '../services/evento/evento.service';
+
 
 @Component({
   selector: 'app-eventos',
@@ -7,17 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosPage implements OnInit {
 
-  dados = [
-    {nome: "git", descricao: "git hub no mercado"},
-    {nome: "git2", descricao: "git hub no mercado2"},
-    {nome: "git3", descricao: "git hub no mercado3"}
+  /* dados = [
+    { nome: "Git", descricao: "Git Hub no mercado" },
+    { nome: "Git 2", descricao: "Git Hub no mercado 2" },
+    { nome: "Git 3", descricao: "Git Hub no mercado 3" }
+  ]; */
+
+  dados = [];
 
 
-  ];
+  constructor(private eventoService: EventoService) { }
 
-  constructor() { }
 
   ngOnInit() {
+    this.eventoService.eventos().subscribe((dados: any) => {
+      console.log(dados);
+      this.dados = dados;
+    });
   }
 
 }

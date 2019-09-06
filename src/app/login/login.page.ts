@@ -27,7 +27,7 @@ export class LoginPage {
 
   async presentToast() {
     const toast = await this.toastController.create({
-      message: 'Your settings have been saved.',
+      message: 'Usuário não encontrado!',
       duration: 10000
     });
     toast.present();

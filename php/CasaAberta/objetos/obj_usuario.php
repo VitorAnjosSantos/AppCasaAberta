@@ -1,5 +1,7 @@
 <?php
     header('Access-Control-Allow-Origin: *');
+    //header("Access-Control-Allow-Headers: Content-Type");
+    //header('Content-Type: application/json');
 
     require_once("./obj_conexao_bd.php");
 

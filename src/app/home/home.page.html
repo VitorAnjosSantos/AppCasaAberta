@@ -1,14 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Olá {{usuario.nome}}</ion-title>
+
     <ion-buttons slot="end">
-   <ion-button (click)="sair()">
-     <ion-icon slot="icon-only" name="power"></ion-icon>
-   </ion-button>
- </ion-buttons>
+      <ion-button (click)="sair()">
+        <ion-icon slot="icon-only" name="power"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-button expand="full" (click)="eventos()">Eventos</ion-button>
+  <ion-button expand="full" (click)="eventos()">Eventos</ion-button>
 </ion-content>
