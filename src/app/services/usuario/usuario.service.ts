@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsuarioService {
-  url: string = "http://localhost:8085/casaaberta/objetos";
+  url: string = "http://10.131.45.40:8081/casaaberta/objetos";
 
   constructor(private http: HttpClient) { }
 
