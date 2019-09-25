@@ -5,10 +5,27 @@
 </ion-header>
 
 <ion-content>
-  <button (click)="tirarFoto()">Tirar Foto</button>
-  <button (click)="localizacao()">Localização</button>
 
-  <h1>Foto</h1>
-  <img src="{{base64Image}}"/>
+<div class="container">
+
+  <div class="conteudo">
+
+    <ion-item class="butoes">
+      <ion-button color="primary" (click)="tirarFoto()">Tirar Foto</ion-button>
+
+      <ion-button color="primary" (click)="localizacao()">Localização</ion-button>
+    </ion-item>
+    
+  </div>
+
+  <div class="localizacao">
+      <p>Latitude: {{geo.latitude}}</p>
+      <p>Longitude: {{geo.longitude}}</p>
+  </div>
+
+  <h1>Fotos</h1>
+  <img *ngFor="let foto of base64Image" src="{{foto}}"/>
+  
+</div>
 
 </ion-content>
