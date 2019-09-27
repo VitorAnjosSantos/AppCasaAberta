@@ -1,23 +1,29 @@
-.conteudo{
-    margin: 0 auto;
-    display: flex;
-}
-
 .container{
     margin-left: 16px;
     margin-right: 16px;
     position:relative;
-    margin-top: 20%;
+    width: 100%;
+    height: 50%
+    
 
 }
 
 .botoes{
+    justify-content: center;
     margin: 0 auto;
     display: flex;
-
 
 }
 
 .localizacao{
-    margin-left: 20px;
+@extend .botoes;
+margin-left: 10px
+}
+
+.direcao{
+    margin-right: 20px
+}
+
+.googleMaps{
+    height: 100%;
 }
