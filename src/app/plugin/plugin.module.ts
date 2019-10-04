@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { PluginPage } from './plugin.page';
 
+import {BotaoComponent} from '../botao/botao.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,6 +23,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PluginPage]
+  declarations: [PluginPage,BotaoComponent]
 })
 export class PluginPageModule {}
